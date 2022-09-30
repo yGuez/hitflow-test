@@ -24,13 +24,13 @@ const styles = StyleSheet.create({
     height: 50,
     borderWidth: 1,
     borderColor: colors.blueMedium,
-    borderRadius: spacing.xl,
+    borderRadius: spacing.xs,
     padding: spacing.s,
     backgroundColor: colors.white,
   },
   label: {
     fontWeight: "bold",
-    marginBottom: spacing.xl,
+    marginBottom: spacing.xs,
     fontSize: font.size.m,
   },
   errorContainer: {

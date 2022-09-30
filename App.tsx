@@ -1,14 +1,11 @@
-import { NavigationContainer } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { StatusBar } from 'expo-status-bar';
-import { Button, Text, View } from 'react-native';
-import Missions from './app/Pages/Missions';
-import Home from './app/Pages/Home';
-import Login from './app/Pages/Login';
+import { NavigationContainer } from "@react-navigation/native";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import Missions from "./app/Pages/Missions";
+import Home from "./app/Pages/Home";
+import Login from "./app/Pages/Login";
 
-import useCachedResources from './hooks/useCachedResources';
-import useColorScheme from './hooks/useColorScheme';
-import Informations from './app/Pages/Informations';
+import useCachedResources from "./hooks/useCachedResources";
+import Informations from "./app/Pages/Informations";
 
 export default function App() {
   const isLoadingComplete = useCachedResources();
@@ -19,13 +16,13 @@ export default function App() {
   } else {
     return (
       <NavigationContainer>
-      <Stack.Navigator initialRouteName="Home">
-        <Stack.Screen name="Home" component={Home} />
-        <Stack.Screen name="Missions" component={Missions} />
-        <Stack.Screen name="Informations" component={Informations} />
-        <Stack.Screen name="Login" component={Login} />
-      </Stack.Navigator>
-    </NavigationContainer>
+        <Stack.Navigator initialRouteName="Home">
+          <Stack.Screen name="Home" component={Home} />
+          <Stack.Screen name="Missions" component={Missions} />
+          <Stack.Screen name="Informations" component={Informations} />
+          <Stack.Screen name="Login" component={Login} />
+        </Stack.Navigator>
+      </NavigationContainer>
     );
   }
 }
