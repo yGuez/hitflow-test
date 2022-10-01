@@ -2,17 +2,17 @@ import { StyleSheet, ViewStyle, Platform } from "react-native";
 import Constants from "expo-constants";
 
 export const colors = {
-  blueGradient: "#3498db",
+  blueGradient: "linear-gradient(to right, #62bdfe, #6833cb)",
   blueLight: "#F4F6FB",
   blueMedium: "#C8D0EB",
   blueDark: "#1C2D6A",
   grey: "#7C879D",
-  white: "#FFFFFF"
+  white: "#FFFFFF",
 };
 
 const baseSpacing = 5;
 export const spacing = {
-  xs : baseSpacing,
+  xs: baseSpacing,
   /** 15 */
   s: baseSpacing * 3,
   /** 20 */
@@ -78,7 +78,7 @@ export const styles = StyleSheet.create({
     borderColor: "#e3e3e3",
     backgroundColor: "#fff",
   },
- 
+
   button: {
     marginTop: 20,
     backgroundColor: "#2980b9",

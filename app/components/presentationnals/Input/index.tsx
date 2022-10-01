@@ -1,11 +1,14 @@
 import React from "react";
-import { Text, TextInput, View, StyleSheet } from "react-native";
+import { TextInput, View, StyleSheet } from "react-native";
 import { colors, font, spacing } from "../../../Pages/styles";
+import Text from "../Text";
 
 export const Input = ({ label, input, placeholder, error }: any) => {
   return (
     <View style={styles.container}>
-      <Text style={styles.label}>{label}</Text>
+      <Text bold style={styles.label}>
+        {label}
+      </Text>
       <TextInput {...input} placeholder={placeholder} style={styles.input} />
       {error ? (
         <View style={styles.errorContainer}>
@@ -29,7 +32,6 @@ const styles = StyleSheet.create({
     backgroundColor: colors.white,
   },
   label: {
-    fontWeight: "bold",
     marginBottom: spacing.xs,
     fontSize: font.size.m,
   },

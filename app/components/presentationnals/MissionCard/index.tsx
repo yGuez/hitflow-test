@@ -1,8 +1,6 @@
-import { StyleSheet, View, Text } from "react-native";
+import { StyleSheet, View } from "react-native";
 import { colors, spacing, font } from "../../../Pages/styles";
-import FlagCircleEnd from "../../icons/FlagCircleEnd";
-import FlagCircleStart from "../../icons/FlagCircleStart";
-import Line from "../../icons/Line";
+import Text from "../Text";
 import Badge, { badgeColors } from "./Badge";
 import Waypoints from "./Waypoints";
 
@@ -16,9 +14,9 @@ const MissionCard = ({ mission }: any) => {
         <View style={styles.left}>
           <Waypoints {...mission} />
           <Text
+            bold
             style={{
               fontSize: font.size.l,
-              fontWeight: "bold",
               marginTop: spacing.m,
             }}
           >
@@ -30,8 +28,8 @@ const MissionCard = ({ mission }: any) => {
 
           <View style={{ marginLeft: spacing.s }}>
             <Text
+              bold
               style={{
-                fontWeight: "bold",
                 fontSize: font.size.xl,
                 color: colors.blueDark,
               }}
@@ -69,6 +67,7 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     display: "flex",
     backgroundColor: colors.white,
+    marginBottom: spacing.m,
   },
   top: {
     display: "flex",
@@ -97,6 +96,7 @@ const styles = StyleSheet.create({
     borderTopWidth: 1,
     borderTopColor: colors.blueLight,
     paddingTop: spacing.m,
+    alignItems: "center",
   },
 });
 

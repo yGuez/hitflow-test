@@ -1,9 +1,10 @@
 import React from "react";
-import { View, StyleSheet, Text } from "react-native";
+import { View, StyleSheet } from "react-native";
 import { spacing, font, colors } from "../../../../Pages/styles";
 import FlagCircleEnd from "../../../icons/FlagCircleEnd";
 import FlagCircleStart from "../../../icons/FlagCircleStart";
 import Line from "../../../icons/Line";
+import Text from "../../Text";
 
 const Waypoints = ({departure, arrival}:any) => {
   return (

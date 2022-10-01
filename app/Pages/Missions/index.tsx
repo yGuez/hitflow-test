@@ -1,7 +1,9 @@
+import { LinearGradient } from "expo-linear-gradient";
 import { View, StyleSheet } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import MissionCard from "../../components/presentationnals/MissionCard";
-import { spacing } from "../styles";
+import ScreenTemplate from "../../components/presentationnals/ScreenTemplate";
+import { colors, spacing } from "../styles";
 
 const missionsList = [
   {
@@ -44,13 +46,17 @@ const missionsList = [
 
 const Missions = () => {
   return (
-    <SafeAreaView>
-      <View style={styles.page}>
-        {missionsList.map((mission) => {
-          return <MissionCard mission={mission} />;
-        })}
-      </View>
-    </SafeAreaView>
+    <>
+      <ScreenTemplate headerPadding={spacing.xs}>
+        <SafeAreaView>
+          <View style={styles.page}>
+            {missionsList.map((mission) => {
+              return <MissionCard mission={mission} />;
+            })}
+          </View>
+        </SafeAreaView>
+      </ScreenTemplate>
+    </>
   );
 };
 
@@ -58,6 +64,8 @@ const styles = StyleSheet.create({
   page: {
     display: "flex",
     padding: spacing.s,
+    height: "100%",
+    backgroundColor: "transparent",
   },
 });
 

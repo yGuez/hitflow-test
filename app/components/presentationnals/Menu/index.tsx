@@ -1,7 +1,8 @@
 import React from "react";
-import { View, StyleSheet, TouchableOpacity, Text } from "react-native";
+import { View, StyleSheet, TouchableOpacity } from "react-native";
 import { colors, spacing, font } from "../../../Pages/styles";
 import Arrow from "../../icons/Arrow";
+import Text from "../Text";
 
 const Menu = ({ navigation, items }: any) => {
   return (
@@ -12,7 +13,8 @@ const Menu = ({ navigation, items }: any) => {
           onPress={() => navigation.navigate(item.url)}
           key={item.url}
         >
-          <Text style={styles.text}>{item.label}</Text>
+             
+          <Text   bold style={styles.text}>{item.label}</Text>
           <Arrow width={20} height={20} color={colors.blueDark}/>
         </TouchableOpacity>
       ))}
@@ -36,7 +38,6 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between'
   },
   text: {
-    fontWeight: "bold",
     fontSize: font.size.m,
     textAlign: "left",
   },
