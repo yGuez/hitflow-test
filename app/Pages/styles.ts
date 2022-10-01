@@ -6,12 +6,13 @@ export const colors = {
   blueLight: "#F4F6FB",
   blueMedium: "#C8D0EB",
   blueDark: "#1C2D6A",
+  grey: "#7C879D",
   white: "#FFFFFF"
 };
 
 const baseSpacing = 5;
 export const spacing = {
-  xl : baseSpacing,
+  xs : baseSpacing,
   /** 15 */
   s: baseSpacing * 3,
   /** 20 */
