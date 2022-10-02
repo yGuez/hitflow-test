@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { Formik } from "formik";
-import { SafeAreaView, View, StyleSheet, Text } from "react-native";
+import { SafeAreaView, View, StyleSheet, ToastAndroid } from "react-native";
 import Button from "../../components/presentationnals/Button";
 import Input from "../../components/presentationnals/Input";
 import { colors, spacing } from "../styles";
@@ -13,6 +13,10 @@ const Informations = ({ navigation }: any) => {
   const { state, dispatch } = useContext(AppContext);
   const onSubmitHandler = (values: any) => {
     dispatch({ type: Types.Update, payload: values });
+    ToastAndroid.show(
+      "Vos informations ont bien été actualisées",
+      ToastAndroid.SHORT
+    );
     navigation.goBack();
   };
   return (
@@ -48,6 +52,7 @@ const Informations = ({ navigation }: any) => {
                       onBlur: handleBlur("firstname"),
                     }}
                     placeholder="John"
+                    error={touched.firstname && errors.firstname}
                   />
                   <Input
                     label="Nom"
@@ -57,6 +62,7 @@ const Informations = ({ navigation }: any) => {
                       onBlur: handleBlur("lastname"),
                     }}
                     placeholder="Smith"
+                    error={touched.lastname && errors.lastname}
                   />
                   <Input
                     label="Email"
