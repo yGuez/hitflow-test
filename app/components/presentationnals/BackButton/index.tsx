@@ -1,12 +1,20 @@
-import { TouchableOpacity } from "react-native";
+import { GestureResponderEvent, TouchableOpacity } from "react-native";
 import { colors, spacing } from "../../../pages/styles";
 import Arrow from "../../icons/Arrow";
 
-const BackButton = ({ onPress }: any) => {
+const BackButton = ({
+  onPress,
+}: {
+  onPress: ((event: GestureResponderEvent) => void) | undefined;
+}) => {
   return (
     <TouchableOpacity
       onPress={onPress}
-      style={{ flexDirection: "row", paddingLeft: spacing.xs, paddingRight: spacing.m }}
+      style={{
+        flexDirection: "row",
+        paddingLeft: spacing.xs,
+        paddingRight: spacing.m,
+      }}
     >
       <Arrow
         width={20}

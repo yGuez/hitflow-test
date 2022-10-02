@@ -1,9 +1,24 @@
 import React from "react";
 import { TextInput, View, StyleSheet } from "react-native";
+import { string } from "yup";
 import { colors, font, spacing } from "../../../pages/styles";
 import Text from "../Text";
 
-export const Input = ({ label, input, placeholder, error }: any) => {
+export const Input = ({
+  label,
+  input,
+  placeholder,
+  error,
+}: {
+  label: string;
+  input: {
+    value: string;
+    onChangeText: (e: string | React.ChangeEvent<any>) => void;
+    onBlur: (e: any) => void;
+  };
+  placeholder: string;
+  error: string | false | undefined;
+}) => {
   return (
     <View style={styles.container}>
       <Text bold style={styles.label}>

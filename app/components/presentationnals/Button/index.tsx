@@ -1,8 +1,14 @@
-import React from "react";
-import { StyleSheet, Text, TouchableOpacity } from "react-native";
+import React, { FormEvent } from "react";
+import { GestureResponderEvent, StyleSheet, Text, TouchableOpacity } from "react-native";
 import { colors, font, spacing } from "../../../pages/styles";
 
-const Button = ({ label, onPress }: any) => {
+const Button = ({
+  label,
+  onPress,
+}: {
+  label: string;
+  onPress: () => any
+}) => {
   return (
     <TouchableOpacity style={styles.button} onPress={onPress}>
       <Text style={styles.buttonText}>{label}</Text>

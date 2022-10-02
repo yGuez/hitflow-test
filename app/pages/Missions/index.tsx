@@ -1,63 +1,63 @@
-import { LinearGradient } from "expo-linear-gradient";
 import { View, StyleSheet, ScrollView } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import MissionCard from "../../components/presentationnals/MissionCard";
 import ScreenTemplate from "../../components/presentationnals/ScreenTemplate";
-import { colors, spacing } from "../styles";
+import { OptionsType } from "../../utils/types";
+import { spacing } from "../styles";
 
 const missionsList = [
   {
     departure: {
       city: "Paris",
       postalCode: 75,
-      date: "tot",
+      date: new Date(),
     },
     arrival: {
       city: "Lille",
       postalCode: 75,
-      date: "tot",
+      date: new Date(),
     },
     price: 50,
     km: 217,
     costumer: "Client A",
     reference: 789078,
-    options: ["Lavage", "W-Garage"],
+    options: [OptionsType.GARAGE],
     quotations: 1,
   },
   {
     departure: {
       city: "Paris",
       postalCode: 75,
-      date: "tot",
+      date: new Date(),
     },
     arrival: {
       city: "Lille",
       postalCode: 75,
-      date: "tot",
+      date: new Date(),
     },
     price: 30,
     km: 217,
     costumer: "Client A",
     reference: 789079,
-    options: ["Lavage"],
+    options: [OptionsType.GARAGE, OptionsType.WASHING],
     quotations: 6,
   },
   {
     departure: {
       city: "Paris",
       postalCode: 75,
-      date: "tot",
+      date: new Date(),
     },
     arrival: {
       city: "Lille",
       postalCode: 75,
-      date: "tot",
+      date: new Date(),
     },
     price: 30,
     km: 217,
     costumer: "Client A",
     reference: 789079,
-    options: ["Lavage"],
+    options: [OptionsType.GARAGE],
     quotations: 6,
   },
 ];

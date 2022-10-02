@@ -1,12 +1,20 @@
 import React from "react";
 import { View, StyleSheet } from "react-native";
 import { spacing, font, colors } from "../../../../pages/styles";
+import { WaypointType } from "../../../../utils/types";
 import FlagCircleEnd from "../../../icons/FlagCircleEnd";
 import FlagCircleStart from "../../../icons/FlagCircleStart";
 import Line from "../../../icons/Line";
 import Text from "../../Text";
+import { format } from "fecha";
 
-const Waypoints = ({ departure, arrival }: any) => {
+const Waypoints = ({
+  departure,
+  arrival,
+}: {
+  departure: WaypointType;
+  arrival: WaypointType;
+}) => {
   return (
     <View>
       <View style={styles.waypoint}>
@@ -16,7 +24,7 @@ const Waypoints = ({ departure, arrival }: any) => {
             {departure?.city} ({departure?.postalCode})
           </Text>
           <Text style={{ fontSize: font.size.s, color: colors.blueMedium }}>
-            {departure?.date}
+            {format(departure?.date, 'DD/MM hh:mm')}
           </Text>
         </View>
       </View>
@@ -30,7 +38,7 @@ const Waypoints = ({ departure, arrival }: any) => {
             {arrival?.city} ({arrival?.postalCode})
           </Text>
           <Text style={{ fontSize: font.size.s, color: colors.blueMedium }}>
-            {arrival?.date}
+          {format(departure?.date, 'DD/MM hh:mm')}
           </Text>
         </View>
       </View>

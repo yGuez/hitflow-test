@@ -1,10 +1,11 @@
 import { StyleSheet, View } from "react-native";
 import { colors, spacing, font } from "../../../pages/styles";
+import { MissionType } from "../../../utils/types";
 import Text from "../Text";
 import Badge, { badgeColors } from "./Badge";
 import Waypoints from "./Waypoints";
 
-const MissionCard = ({ mission }: any) => {
+const MissionCard = ({ mission }: { mission: MissionType }) => {
   const quotationText =
     mission?.quotations <= 5 ? `O - ${mission?.quotations} devis` : `+ 5 devis`;
 

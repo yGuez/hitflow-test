@@ -1,8 +1,16 @@
-import { Image, View, StyleSheet } from "react-native";
+import { Image, View, StyleSheet, ImageSourcePropType } from "react-native";
 import { colors, font, spacing } from "../../../pages/styles";
 import Text from "../Text";
 
-const Avatar = ({ imageUrl, name, email }: any) => {
+const Avatar = ({
+  imageUrl,
+  name,
+  email,
+}: {
+  imageUrl: ImageSourcePropType;
+  name: string;
+  email: string;
+}) => {
   return (
     <View style={styles.container}>
       <Image source={imageUrl} />
@@ -19,7 +27,7 @@ const styles = StyleSheet.create({
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
-    marginBottom: spacing.l
+    marginBottom: spacing.l,
   },
   name: {
     fontSize: font.size.xl,
