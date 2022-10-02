@@ -1,5 +1,5 @@
 import { View, StyleSheet } from "react-native";
-import { colors, spacing } from "../../../../pages/styles";
+import { colors, font, spacing } from "../../../../pages/styles";
 import Text from "../../Text";
 
 export enum badgeColors {
@@ -7,12 +7,19 @@ export enum badgeColors {
   blueMedium = "#C8D0EB",
 }
 
-const Badge = ({ text, color }: { text: string; color: badgeColors }) => {
+const Badge = ({
+  text,
+  color,
+}: {
+  text: string;
+  color: badgeColors;
+}) => {
   return (
     <View style={{ ...styles.container, backgroundColor: color }}>
       <Text
         bold
         style={{
+          fontSize: font.size.s,
           color:
             color === badgeColors.blueDark ? colors.white : colors.blueDark,
         }}

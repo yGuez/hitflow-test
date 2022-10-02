@@ -49,12 +49,15 @@ const MissionCard = ({ mission }: any) => {
             flexWrap: "wrap",
           }}
         >
-          {mission?.options?.map((option) => (
-            <Badge text={option} color={badgeColors.blueMedium} key={option} />
+          {mission?.options?.map((option: any) => (
+            <View style={{ marginRight: spacing.xs }} key={option}>
+              <Badge text={option} color={badgeColors.blueMedium} />
+            </View>
           ))}
         </View>
         <Text
-          style={{ color: colors.grey, fontWeight: "bold" }}
+          bold
+          style={{ color: colors.grey, fontSize: font.size.s }}
         >{`Mission n° ${mission?.reference}`}</Text>
       </View>
     </View>

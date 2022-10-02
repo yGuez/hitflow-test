@@ -1,5 +1,5 @@
 import { LinearGradient } from "expo-linear-gradient";
-import { View, StyleSheet } from "react-native";
+import { View, StyleSheet, ScrollView } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import MissionCard from "../../components/presentationnals/MissionCard";
 import ScreenTemplate from "../../components/presentationnals/ScreenTemplate";
@@ -42,6 +42,24 @@ const missionsList = [
     options: ["Lavage"],
     quotations: 6,
   },
+  {
+    departure: {
+      city: "Paris",
+      postalCode: 75,
+      date: "tot",
+    },
+    arrival: {
+      city: "Lille",
+      postalCode: 75,
+      date: "tot",
+    },
+    price: 30,
+    km: 217,
+    costumer: "Client A",
+    reference: 789079,
+    options: ["Lavage"],
+    quotations: 6,
+  },
 ];
 
 const Missions = () => {
@@ -49,11 +67,13 @@ const Missions = () => {
     <>
       <ScreenTemplate headerPadding={spacing.xs}>
         <SafeAreaView>
-          <View style={styles.page}>
-            {missionsList.map((mission) => {
-              return <MissionCard mission={mission} />;
-            })}
-          </View>
+          <ScrollView>
+            <View style={styles.page}>
+              {missionsList.map((mission) => {
+                return <MissionCard mission={mission} />;
+              })}
+            </View>
+          </ScrollView>
         </SafeAreaView>
       </ScreenTemplate>
     </>

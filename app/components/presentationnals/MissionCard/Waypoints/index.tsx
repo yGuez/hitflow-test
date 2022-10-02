@@ -6,7 +6,7 @@ import FlagCircleStart from "../../../icons/FlagCircleStart";
 import Line from "../../../icons/Line";
 import Text from "../../Text";
 
-const Waypoints = ({departure, arrival}:any) => {
+const Waypoints = ({ departure, arrival }: any) => {
   return (
     <View>
       <View style={styles.waypoint}>
@@ -20,7 +20,9 @@ const Waypoints = ({departure, arrival}:any) => {
           </Text>
         </View>
       </View>
-      <Line width={3} height={39} style={{ marginLeft: 32 }} />
+      <View style={{ marginLeft: spacing.s }}>
+        <Line width={3} height={39} />
+      </View>
       <View style={styles.waypoint}>
         <FlagCircleEnd />
         <View style={{ marginLeft: spacing.s }}>
@@ -37,12 +39,11 @@ const Waypoints = ({departure, arrival}:any) => {
 };
 
 const styles = StyleSheet.create({
-    waypoint: {
-      display: "flex",
-      flexDirection: "row",
-      alignItems: "flex-start",
-    },
-  });
-  
+  waypoint: {
+    display: "flex",
+    flexDirection: "row",
+    alignItems: "flex-start",
+  },
+});
 
 export default Waypoints;
