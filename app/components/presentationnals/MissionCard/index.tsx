@@ -33,9 +33,10 @@ const MissionCard = ({ mission }: { mission: MissionType }) => {
               style={{
                 fontSize: font.size.xl,
                 color: colors.blueDark,
+                marginTop: spacing.m
               }}
             >
-              {mission?.price} €*
+              {mission?.price} € <Text style={{color: '#4569EA'}}>*</Text>
             </Text>
             <Text style={{ color: colors.blueDark }}>{mission?.km} km</Text>
           </View>

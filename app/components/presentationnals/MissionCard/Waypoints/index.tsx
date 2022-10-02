@@ -23,7 +23,7 @@ const Waypoints = ({
           <Text style={{ fontSize: font.size.l }}>
             {departure?.city} ({departure?.postalCode})
           </Text>
-          <Text style={{ fontSize: font.size.s, color: colors.blueMedium }}>
+          <Text style={{ fontSize: font.size.s, color: colors.grey }}>
             {format(departure?.date, 'DD/MM hh:mm')}
           </Text>
         </View>
@@ -37,7 +37,7 @@ const Waypoints = ({
           <Text style={{ fontSize: font.size.l }}>
             {arrival?.city} ({arrival?.postalCode})
           </Text>
-          <Text style={{ fontSize: font.size.s, color: colors.blueMedium }}>
+          <Text style={{ fontSize: font.size.s, color: colors.grey }}>
           {format(departure?.date, 'DD/MM hh:mm')}
           </Text>
         </View>

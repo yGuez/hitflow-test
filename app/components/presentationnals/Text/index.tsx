@@ -9,7 +9,7 @@ const Text = ({
 }: {
   children: ReactNode;
   bold?: boolean;
-  style: StyleProp<any>;
+  style?: StyleProp<any>;
 }) => {
   return (
     <NativeText
