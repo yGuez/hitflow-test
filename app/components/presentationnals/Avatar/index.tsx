@@ -1,5 +1,5 @@
 import { Image, View, StyleSheet } from "react-native";
-import { colors, font } from "../../../Pages/styles";
+import { colors, font, spacing } from "../../../Pages/styles";
 import Text from "../Text";
 
 const Avatar = ({ imageUrl, name, email }: any) => {
@@ -19,6 +19,7 @@ const styles = StyleSheet.create({
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
+    marginBottom: spacing.l
   },
   name: {
     fontSize: font.size.xl,

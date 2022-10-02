@@ -1,4 +1,3 @@
-import { ReactNode } from "react";
 import { Text as NativeText, StyleSheet } from "react-native";
 
 const Text = ({ children, bold, style, ...props }: any) => {
