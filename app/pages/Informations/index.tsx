@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Formik } from "formik";
 import { SafeAreaView, View, StyleSheet, Text } from "react-native";
 import Button from "../../components/presentationnals/Button";
@@ -6,18 +6,24 @@ import Input from "../../components/presentationnals/Input";
 import { colors, spacing } from "../styles";
 import { validationSchema } from "./validation";
 import ScreenTemplate from "../../components/presentationnals/ScreenTemplate";
+import { AppContext } from "../../context/AppContext";
+import { Types } from "../../models/reducerTypes";
 
 const Informations = ({ navigation }: any) => {
-  const onSubmitHandler = (values: any) => {navigation.goBack()};
+  const { state, dispatch } = useContext(AppContext);
+  const onSubmitHandler = (values: any) => {
+    dispatch({ type: Types.Update, payload: values });
+    navigation.goBack();
+  };
   return (
     <ScreenTemplate headerPadding={spacing.s}>
       <SafeAreaView>
         <View style={styles.page}>
           <Formik
             initialValues={{
-              firstname: "john",
-              lastname: "toto",
-              email: "toto@mail.com",
+              firstname: state.user.firstname,
+              lastname: state.user.lastname,
+              email: state.user.email,
             }}
             onSubmit={(values) => {
               onSubmitHandler(values);
