@@ -1,5 +1,5 @@
 import { View, StyleSheet } from "react-native";
-import { colors, spacing } from "../../../../Pages/styles";
+import { colors, spacing } from "../../../../pages/styles";
 import Text from "../../Text";
 
 export enum badgeColors {

@@ -1,6 +1,6 @@
 import React from "react";
 import { View, StyleSheet } from "react-native";
-import { spacing, font, colors } from "../../../../Pages/styles";
+import { spacing, font, colors } from "../../../../pages/styles";
 import FlagCircleEnd from "../../../icons/FlagCircleEnd";
 import FlagCircleStart from "../../../icons/FlagCircleStart";
 import Line from "../../../icons/Line";

@@ -1,6 +1,6 @@
 import React from "react";
 import { TextInput, View, StyleSheet } from "react-native";
-import { colors, font, spacing } from "../../../Pages/styles";
+import { colors, font, spacing } from "../../../pages/styles";
 import Text from "../Text";
 
 export const Input = ({ label, input, placeholder, error }: any) => {

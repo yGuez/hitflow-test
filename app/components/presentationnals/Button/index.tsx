@@ -1,6 +1,6 @@
 import React from "react";
 import { StyleSheet, Text, TouchableOpacity } from "react-native";
-import { colors, font, spacing } from "../../../Pages/styles";
+import { colors, font, spacing } from "../../../pages/styles";
 
 const Button = ({ label, onPress }: any) => {
   return (

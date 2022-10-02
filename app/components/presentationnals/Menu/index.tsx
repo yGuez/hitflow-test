@@ -1,6 +1,6 @@
 import React from "react";
 import { View, StyleSheet, TouchableOpacity } from "react-native";
-import { colors, spacing, font } from "../../../Pages/styles";
+import { colors, spacing, font } from "../../../pages/styles";
 import Arrow from "../../icons/Arrow";
 import Text from "../Text";
 

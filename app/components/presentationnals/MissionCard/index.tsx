@@ -1,5 +1,5 @@
 import { StyleSheet, View } from "react-native";
-import { colors, spacing, font } from "../../../Pages/styles";
+import { colors, spacing, font } from "../../../pages/styles";
 import Text from "../Text";
 import Badge, { badgeColors } from "./Badge";
 import Waypoints from "./Waypoints";

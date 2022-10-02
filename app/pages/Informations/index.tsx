@@ -8,9 +8,9 @@ import { validationSchema } from "./validation";
 import ScreenTemplate from "../../components/presentationnals/ScreenTemplate";
 
 const Informations = ({ navigation }: any) => {
-  const onSubmitHandler = (values: any) => {};
+  const onSubmitHandler = (values: any) => {navigation.goBack()};
   return (
-    <ScreenTemplate headerPadding={spacing.xs}>
+    <ScreenTemplate headerPadding={spacing.s}>
       <SafeAreaView>
         <View style={styles.page}>
           <Formik

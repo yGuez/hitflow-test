@@ -12,7 +12,7 @@ const menuItems = [
 
 const Home = ({ navigation }: any) => {
   return (
-    <ScreenTemplate headerPadding={spacing.xs}>
+    <ScreenTemplate headerPadding={spacing.s}>
       <SafeAreaView>
         <View style={styles.page}>
           <Avatar

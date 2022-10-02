@@ -1,5 +1,5 @@
 import { Image, View, StyleSheet } from "react-native";
-import { colors, font, spacing } from "../../../Pages/styles";
+import { colors, font, spacing } from "../../../pages/styles";
 import Text from "../Text";
 
 const Avatar = ({ imageUrl, name, email }: any) => {

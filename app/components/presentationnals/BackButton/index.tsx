@@ -1,5 +1,5 @@
 import { TouchableOpacity } from "react-native";
-import { colors, spacing } from "../../../Pages/styles";
+import { colors, spacing } from "../../../pages/styles";
 import Arrow from "../../icons/Arrow";
 
 const BackButton = ({ onPress }: any) => {
