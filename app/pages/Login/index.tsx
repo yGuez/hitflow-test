@@ -5,6 +5,7 @@ import {
   ScrollView,
   StyleSheet,
   Image,
+  ActivityIndicator,
 } from "react-native";
 import { Formik } from "formik";
 import { validationSchema } from "./validation";
@@ -16,13 +17,27 @@ import ScreenTemplate from "../../components/presentationnals/ScreenTemplate";
 import Text from "../../components/presentationnals/Text";
 import { AppContext } from "../../context/AppContext";
 import { Types } from "../../models/reducerTypes";
+import { login } from "../../services/login";
 
 const RegisterForm = () => {
-  const { dispatch } = useContext(AppContext);
-
-  const onSubmitHandler = (values: { password: string; email: string }) => {
-    if (values.password === "password") {
-      dispatch({ type: Types.Log, payload: true });
+  const { state, dispatch } = useContext(AppContext);
+  const onSubmitHandler = async (values: {
+    password: string;
+    email: string;
+  }) => {
+    dispatch({ type: Types.Login, payload: true });
+    try {
+      const res = await fetch("https://testlogin.free.beeceptor.com/login", {
+        method: "POST",
+        body: JSON.stringify(values),
+      });
+      if (res.ok) {
+        dispatch({ type: Types.LoginSuccess, payload: true });
+      } else {
+        dispatch({ type: Types.LoginFail, payload: true });
+      }
+    } catch (err) {
+      dispatch({ type: Types.LoginFail, payload: true });
     }
   };
 
@@ -78,7 +93,16 @@ const RegisterForm = () => {
                       error={touched.password && errors.password}
                     />
 
-                    <Button onPress={handleSubmit} label="S'identifier" />
+                    <Button
+                      onPress={handleSubmit}
+                      label="S'identifier"
+                      disabled={state.isLoading}
+                    />
+                    {state.isLoading && (
+                      <View style={{ marginTop: spacing.l }}>
+                        <ActivityIndicator size="large" color={colors.white} />
+                      </View>
+                    )}
                   </ScrollView>
                 )}
               </Formik>

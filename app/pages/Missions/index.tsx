@@ -69,8 +69,13 @@ const Missions = () => {
         <SafeAreaView>
           <ScrollView>
             <View style={styles.page}>
-              {missionsList.map((mission) => {
-                return <MissionCard mission={mission} />;
+              {missionsList.map((mission, i) => {
+                return (
+                  <MissionCard
+                    mission={mission}
+                    key={`${mission.reference}-${i}`}
+                  />
+                );
               })}
             </View>
           </ScrollView>

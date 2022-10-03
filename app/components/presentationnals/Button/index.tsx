@@ -5,12 +5,14 @@ import { colors, font, spacing } from "../../../pages/styles";
 const Button = ({
   label,
   onPress,
+  disabled
 }: {
   label: string;
+  disabled: boolean,
   onPress: () => any
 }) => {
   return (
-    <TouchableOpacity style={styles.button} onPress={onPress}>
+    <TouchableOpacity style={[styles.button, disabled && styles.disabled]} onPress={onPress} disabled={disabled}>
       <Text style={styles.buttonText}>{label}</Text>
     </TouchableOpacity>
   );
@@ -28,6 +30,10 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     fontSize: font.size.m,
     textAlign: "center",
+  },
+  disabled: {
+    backgroundColor: colors.blueDark,
+    opacity: 0.7
   },
 });
 

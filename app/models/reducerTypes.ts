@@ -1,5 +1,7 @@
 export enum Types {
-  Log = "LOG",
+  Login = "LOGIN",
+  LoginSuccess = "LOGIN_SUCCESS",
+  LoginFail = "LOGIN_FAIL",
   Update = "UPDATE_USER",
 }
 
@@ -10,7 +12,8 @@ export type UserType = {
 };
 
 export type InitialStateType = {
-  isLogged: boolean
+  isLogged: boolean;
+  isLoading: boolean,
   user: UserType;
 };
 
@@ -24,6 +27,15 @@ export type UserActions = {
 };
 
 export type LogActions = {
-  type: Types.Log;
-  payload: boolean
+  type: Types.Login;
+  payload: boolean;
+};
+
+export type LogActionsSuccess = {
+  type: Types.LoginSuccess;
+  payload: boolean;
+};
+export type LogActionsFail = {
+  type: Types.LoginFail;
+  payload: boolean;
 };

@@ -12,7 +12,6 @@ import { AppContext } from "../context/AppContext";
 const Navivation = ({}) => {
   const Stack = createNativeStackNavigator();
   const { state } = useContext(AppContext);
-console.log(state.isLogged)
   if (!state.isLogged) {
     return (
       <NavigationContainer>
