@@ -1,3 +1,4 @@
+import React from 'react'
 import useCachedResources from "./hooks/useCachedResources";
 import { useFonts } from "expo-font";
 import Navivation from "./app/navigation";

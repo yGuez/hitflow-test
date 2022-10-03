@@ -1,3 +1,4 @@
+import React from 'react'
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import BackButton from "../components/presentationnals/BackButton";
@@ -9,7 +10,7 @@ import { colors } from "../pages/styles";
 import { useContext } from "react";
 import { AppContext } from "../context/AppContext";
 
-const Navivation = ({}) => {
+const Navivation = () => {
   const Stack = createNativeStackNavigator();
   const { state } = useContext(AppContext);
   if (!state.isLogged) {
@@ -50,7 +51,7 @@ const Navivation = ({}) => {
           <Stack.Screen
             name="Missions"
             component={Missions}
-            options={({ navigation, route }) => ({
+            options={({ navigation }) => ({
               title: "Mes missions",
               headerStyle: {
                 backgroundColor: "transparent",
