@@ -1,6 +1,5 @@
 import React from "react";
 import { TextInput, View, StyleSheet } from "react-native";
-import { string } from "yup";
 import { colors, font, spacing } from "../../../pages/styles";
 import Text from "../Text";
 
@@ -10,7 +9,7 @@ export const Input = ({
   placeholder,
   error,
 }: {
-  label: string;
+  label?: string;
   input: {
     value: string;
     onChangeText: (e: string | React.ChangeEvent<any>) => void;

@@ -1,8 +1,9 @@
-import React, { createContext, Dispatch, ReactNode, useContext, useReducer } from "react";
-import { InitialStateType, UserActions } from "../models/reducerTypes";
+import React, { createContext, Dispatch, ReactNode, useReducer } from "react";
+import { InitialStateType, LogActions, UserActions } from "../models/reducerTypes";
 import { reducer } from "../utils/reducer";
 
 export const initialState: InitialStateType = {
+  isLogged: false,
   user: {
     firstname: "John",
     lastname: "Doe",
@@ -12,14 +13,14 @@ export const initialState: InitialStateType = {
 
 export const AppContext = createContext<{
   state: InitialStateType;
-  dispatch: Dispatch<UserActions>;
+  dispatch: Dispatch<UserActions | LogActions>;
 }>({
   state: initialState,
   dispatch: () => null,
 });
 
 export const AppContextProvider = ({ children }: { children: ReactNode }) => {
-  const mainReducer = (state: InitialStateType, action: UserActions) =>
+  const mainReducer = (state: InitialStateType, action: UserActions | LogActions) =>
     reducer(state, action);
   const [state, dispatch] = useReducer(mainReducer, initialState);
 
@@ -29,5 +30,3 @@ export const AppContextProvider = ({ children }: { children: ReactNode }) => {
     </AppContext.Provider>
   );
 };
-
-// export const useUser = useContext(AppContext);
