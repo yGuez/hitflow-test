@@ -1,29 +1,29 @@
-import { GestureResponderEvent, TouchableOpacity } from "react-native";
-import { colors, spacing } from "../../../pages/styles";
-import Arrow from "../../icons/Arrow";
+import { GestureResponderEvent, TouchableOpacity } from 'react-native'
+import { colors, spacing } from '../../../pages/styles'
+import Arrow from '../../icons/Arrow'
 
 const BackButton = ({
-  onPress,
+    onPress,
 }: {
-  onPress: ((event: GestureResponderEvent) => void) | undefined;
+    onPress: ((event: GestureResponderEvent) => void) | undefined
 }) => {
-  return (
-    <TouchableOpacity
-      onPress={onPress}
-      style={{
-        flexDirection: "row",
-        paddingLeft: spacing.xs,
-        paddingRight: spacing.m,
-      }}
-    >
-      <Arrow
-        width={20}
-        height={20}
-        style={{ transform: [{ rotateY: "180deg" }] }}
-        color={colors.white}
-      />
-    </TouchableOpacity>
-  );
-};
+    return (
+        <TouchableOpacity
+            onPress={onPress}
+            style={{
+                flexDirection: 'row',
+                paddingLeft: spacing.xs,
+                paddingRight: spacing.m,
+            }}
+        >
+            <Arrow
+                width={20}
+                height={20}
+                style={{ transform: [{ rotateY: '180deg' }] }}
+                color={colors.white}
+            />
+        </TouchableOpacity>
+    )
+}
 
-export default BackButton;
+export default BackButton
