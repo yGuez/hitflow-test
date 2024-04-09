@@ -1,15 +1,22 @@
 import { useState } from 'react'
 import { EXPO_PUBLIC_API_URL } from '@env'
 
-const usePost = () => {
+interface UsePostApiReturnType<T>  {
+    isLoading: boolean;
+    error: Error | null;
+    data: T | null;
+    postApi: (url:string, requestData: any) => Promise<void>;
+  };
+
+const usePost = <T>(): UsePostApiReturnType<T> => {
     const apiUrl = EXPO_PUBLIC_API_URL
-    const [data, setData] = useState(null)
-    const [error, setError] = useState(null)
-    const [isLoading, setIsLoading] = useState(false)
+    const [isLoading, setIsLoading] = useState(false);
+    const [error, setError] = useState<Error | null>(null);
+    const [data, setData] = useState<T | null>(null);
 
     const postApi = async (url: string, body: object) => {
-        console.log('url', apiUrl)
         setIsLoading(true)
+        setError(null);
         try {
             const response = await fetch(`${apiUrl}${url}`, {
                 method: 'POST',
@@ -18,7 +25,7 @@ const usePost = () => {
             const data = await response.json()
             setData(data)
         } catch (error) {
-            setError(error)
+            setError(error as Error)
         } finally {
             setIsLoading(false)
         }
@@ -27,4 +34,5 @@ const usePost = () => {
     return { data, error, isLoading, postApi }
 }
 
+  
 export default usePost
